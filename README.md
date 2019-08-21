@@ -13,7 +13,7 @@ This is an implementation of intrinsic curiosity module (ICML 2017).
 #### Pyramid env, Unity ML
 Agent Reward Function (independent): <br>
 * +2 For moving to golden brick <br>
-* - 0.001 per step<br>
+* -0.001 per step<br>
 ![pyramid_agent][image2]
 ![pyramid][image1]
 
