@@ -33,3 +33,12 @@ Located in `icm.py`
 `intrinsic_reward = agent.icm.compute_intrinsic_reward(states, next_states, actions)`<br>
 * train ICM when training PPO <br>
 `self.icm.train(state_samples, next_state_samples, action_samples)`<br>
+
+### Running experiments
+`git clone https://github.com/bonniesjli/icm.git`<br>
+`cd icm` <br>
+`pip install -e .` <br>
+* to run the pyramid experiment <br>
+`python -m main_pyramid` <br>
+* to run the pushblock experiment <br>
+`python -m main_pushblock` <br>

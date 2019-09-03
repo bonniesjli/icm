@@ -13,9 +13,9 @@ if (sys.version_info[0] < 3):
     raise Exception("ERROR: ML-Agents Toolkit (v0.3 onwards) requires Python 3")
 arg1 = sys.argv[1]
 if arg1 == "linux":
-    env = UnityEnvironment(file_name = "../../bonnie_envs/pushblock_linux/pushblock.x86_64")
+    env = UnityEnvironment(file_name = "envs/pushblock_linux/pushblock.x86_64")
 if arg1 == "window":
-    env = UnityEnvironment(file_name = "../../bonnie_envs/pushblock_window/Unity Environment.exe")
+    env = UnityEnvironment(file_name = "envs/pushblock_window/Unity Environment.exe")
 
 default_brain = env.brain_names[0]
 brain = env.brains[default_brain]
