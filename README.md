@@ -14,14 +14,12 @@ This is an implementation of intrinsic curiosity module (ICML 2017).
 Agent Reward Function (independent): <br>
 * +2 For moving to golden brick <br>
 * -0.001 per step<br>
-:-------------------------:|:-------------------------:
 ![pyramid_agent][image2] | ![pyramid][image1]
 
 #### PushBlock env, Unity ML
 Agent Reward Function: <br>
 * +5.0 if the block touches the goal<br>
 * -0.0025 for every step.<br>
-:-------------------------:|:-------------------------:
 ![push_agent][image4] | ![push][image3]
 
 
