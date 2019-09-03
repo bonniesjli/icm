@@ -16,7 +16,7 @@ if arg1 == "linux":
     env = UnityEnvironment(file_name = "../../bonnie_envs/pushblock_linux/pushblock.x86_64")
 if arg1 == "window":
     env = UnityEnvironment(file_name = "../../bonnie_envs/pushblock_window/Unity Environment.exe")
-    
+
 default_brain = env.brain_names[0]
 brain = env.brains[default_brain]
 
@@ -26,7 +26,7 @@ def main(run, icm = True):
     :param: (bool) icm
     """
     env.reset()
-    
+
     max_t = 6e4 #1e5
     t_horizon = 10
     t = 0
@@ -36,7 +36,7 @@ def main(run, icm = True):
     num_step = 256
     gamma = 0.99
     pre_obs_norm_step = 10000
-    
+
     reward_rms = RunningMeanStd()
     obs_rms = RunningMeanStd(1, input_size)
     discounted_reward = RewardForwardFilter(gamma)
@@ -110,7 +110,7 @@ def main(run, icm = True):
             next_states = np.stack(next_states)
             rewards = np.hstack(rewards)
             dones = np.hstack(dones)
-            
+
             if icm:
                 intrinsic_reward = agent.icm.compute_intrinsic_reward(
                                     (states - obs_rms.mean)/np.sqrt(obs_rms.var),
@@ -120,8 +120,8 @@ def main(run, icm = True):
                 LOG.log("intrinsic_reward", intrinsic_reward)
                 intrinsic_reward = np.hstack(intrinsic_reward)
                 combine_reward = (1-int_coef) * rewards + int_coef * intrinsic_reward
-                
-            if not icm: 
+
+            if not icm:
                 intrinsic_reward = np.zeros(num_worker)
                 combine_reward = rewards
 
@@ -199,10 +199,10 @@ def main(run, icm = True):
                             adv, total_policy)
     LOG.save_data()
     LOG.visualize("score")
-    
+
 main("run1")
-main("run2", False)
+main("run2")
 main("run3")
-main("run4")
+main("run4", False)
 main("run5", False)
 main("run6", False)
