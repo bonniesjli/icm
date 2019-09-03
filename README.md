@@ -8,20 +8,22 @@
 # PPO+ICM
 
 This is an implementation of intrinsic curiosity module (pathak et al, ICML 2017). <br>
-This doc includes test curves, icm module usage, and instructions to run the experiments. 
+This doc includes test curves, ICM module usage, and instructions to run the experiments. 
 
 ### Tests
 #### Pyramid env, Unity ML
 Agent Reward Function (independent): <br>
 * +2 For moving to golden brick <br>
 * -0.001 per step<br>
-![pyramid_agent][image2] | ![pyramid][image1]
+![pyramid_agent][image2]
+![pyramid][image1]
 
 #### PushBlock env, Unity ML
 Agent Reward Function: <br>
 * +5.0 if the block touches the goal<br>
 * -0.0025 for every step.<br>
-![push_agent][image4] | ![push][image3]
+![push_agent][image4]
+![push][image3]
 
 
 ### ICM Module Usage
@@ -35,7 +37,7 @@ Located in `icm.py`
 * train ICM when training PPO <br>
 `self.icm.train(state_samples, next_state_samples, action_samples)`<br>
 
-### Running experiments
+### Running Experiments
 `git clone https://github.com/bonniesjli/icm.git`<br>
 `cd icm` <br>
 `cd envs` <br>
