@@ -27,8 +27,8 @@ Agent Reward Function: <br>
 Located in `icm.py`
 * initialize module within ppo agent <br>
 `class Agent():`<br>
-<p> `def __init__():` </p>
-<p> `self.icm = ICM(state_size, action_size)` </p>
+`def __init__():` <br>
+`self.icm = ICM(state_size, action_size)` <br>
 * compute intrinsic reward when interacting with environment <br>
 `intrinsic_reward = agent.icm.compute_intrinsic_reward(states, next_states, actions)`<br>
 * train ICM when training PPO <br>
