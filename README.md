@@ -7,7 +7,8 @@
 
 # PPO+ICM
 
-This is an implementation of intrinsic curiosity module (ICML 2017).
+This is an implementation of intrinsic curiosity module (pathak et al, ICML 2017). <br>
+This doc includes test curves, icm module usage, and instructions to run the experiments. 
 
 ### Tests
 #### Pyramid env, Unity ML
@@ -37,6 +38,7 @@ Located in `icm.py`
 ### Running experiments
 `git clone https://github.com/bonniesjli/icm.git`<br>
 `cd icm` <br>
+`cd envs` <br>
 `pip install -e .` <br>
 * to run the pyramid experiment <br>
 `python -m main_pyramid` <br>
